@@ -1,0 +1,39 @@
+[user]
+        name = Evgeny Klyopov
+        email = mail@klepov.info
+
+[core]
+        editor = vim
+        quotepath = false
+        eol = lf
+#       autocrlf = false
+#       safecrlf = true
+[alias]
+        co = checkout
+        br = branch
+        ci = commit
+        cim = commit -m
+        st = status
+        di = diff --color
+        dim = diff --color origin/master
+        dis = diff --color origin/stage
+        dimf = diff --name-status  origin/master
+        disf = diff --name-status origin/stage
+        up = !(git add . && git stash && git pull --rebase >&2) | grep -v \"No local changes to save\" && git stash pop
+        out = log @{u}..
+        lg = "log --pretty=format:'%h was %an, %ar, message: %s' --graph"
+        ll = log -20 --pretty='%Cred%h %Cblue%an %ar %Cgreen%s'
+        hist = log --pretty=format:\"%Cred%h %C(red bold)%ad | %C(reset)%Cgreen%s%d %C(yellow bold)[%an]\" --graph --date=short
+        in = "!git remote update -p; git log ..@{u}"
+        lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %C(white bold)%an%C(reset)%C(bold yellow)%d%C(reset)' --all
+        lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+        lg = !"git lg1"
+[color]
+        ui = true
+        branch = auto
+        diff = auto
+        status = auto
+[log]
+        decorate = full
+[http]
+        sslverify = false
