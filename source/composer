@@ -1,0 +1,3 @@
+#!/bin/sh
+rootDir=~
+php "$rootDir/modules/git/share/composer.phar" "$@"
