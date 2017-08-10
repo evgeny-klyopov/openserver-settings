@@ -8,9 +8,5 @@
 ### 2. [Генерация ключей или привязка уже существующих к консоли OpenServer-a)](SSH-KEY.md)
 ### 3. [Добавление nano в консоль gitBash](ADD-NANO-GIT-BASH.md)
 ### 4. [Настройка git конфига](GIT-CONFIG.md)
-### 5. [Установка composer](INSTALL-COMPOSER.md) 
-
-
-    
-
-
+### 5. [Установка composer](INSTALL-COMPOSER.md)
+### 6. [Установка поддержки русских символов](RUSSIAN-ENCODE.md)
