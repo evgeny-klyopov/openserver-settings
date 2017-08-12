@@ -5,6 +5,6 @@
     "%ConEmuDir%\..\git\git-bash.bat" --no-cd --command=usr/bin/bash.exe -l -i
     ```
 
-    ![Открыть консоль](img/console.png "Открыть консоль")
+    ![Открыть консоль](../img/console.png "Открыть консоль")
 
     В настройках старта(Startup) можно выбрать консоль по умолчанию

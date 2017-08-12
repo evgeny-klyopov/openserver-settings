@@ -12,4 +12,4 @@ php -r "readfile('https://getcomposer.org/installer');" | php
 
 ##### Важно: При смене версии php в модулях OpenServer-a, необходимо перезапустить консоль
 
-![Установка composer](img/install-composer.png "Установка composer")
+![Установка composer](../img/install-composer.png "Установка composer")

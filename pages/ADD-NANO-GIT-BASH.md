@@ -27,4 +27,4 @@ rm nano-2.2.6.zip
 ```
 **копируем** файл nano в директорию modules/git/bin
 
-![Установка nano](img/install-nano.png "Установка nano")
+![Установка nano](../img/install-nano.png "Установка nano")
