@@ -9,4 +9,5 @@
 ### 3. [Настройка git конфига](pages/GIT-CONFIG.md)
 ### 4. [Установка composer](pages/INSTALL-COMPOSER.md)
 ### 5. [Установка поддержки русских символов](pages/RUSSIAN-ENCODE.md)
-### 6. [Добавление nano в консоль gitBash](pages/ADD-NANO-GIT-BASH.md)
+### 6. [Настройка истории выполнения комманд](pages/BASH-HISTORY.md)
+### 7. [Добавление nano в консоль gitBash](pages/ADD-NANO-GIT-BASH.md)
