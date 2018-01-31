@@ -14,5 +14,6 @@ gt = git fetch && git describe --tags $(git rev-list --tags --max-count=1)
 pr = pushRelease
 ```
 , для укороченного вызова команды pushRelease ввиде **git pr tagName**.
-Также для получения последнего созданного тэга добавлен alias gt
+Также для получения последнего созданного тэга добавлен alias gt.
+
 ![git gt](../img/git-get-last-tag.png "git gt")
