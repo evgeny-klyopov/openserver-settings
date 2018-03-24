@@ -1,0 +1,3 @@
+#!/bin/sh
+rootDir=~
+"$rootDir/modules/nodejs/npm" "$@"

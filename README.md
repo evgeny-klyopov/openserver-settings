@@ -11,4 +11,9 @@
 ### 5. [Установка поддержки русских символов](pages/RUSSIAN-ENCODE.md)
 ### 6. [Настройка истории выполнения комманд](pages/BASH-HISTORY.md)
 ### 7. [Комманда пуша в ветку релиз с тэгом](pages/GIT-PUSH-RELEASE.md)
-### 8. [Добавление nano в консоль gitBash](pages/ADD-NANO-GIT-BASH.md)
+### 8. [Установка npm, node.js](pages/INSTALL-NPM.md)
+### 9. Установка yarn
+### 10. Webpack, сборка, запуск dev ноды
+### 11. RabbitMQ
+### 12. Подключение расширения image_filter и интеграция его в nginx 
+
