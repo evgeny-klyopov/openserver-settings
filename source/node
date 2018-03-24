@@ -1,4 +1,4 @@
 #!/bin/sh
 export PATH=$PATH:~/modules/nodejs
 rootDir=~
-"$rootDir/modules/nodejs/npm" "$@"
+"$rootDir/modules/nodejs/node" "$@"

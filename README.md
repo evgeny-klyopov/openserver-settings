@@ -12,7 +12,7 @@
 ### 6. [Настройка истории выполнения комманд](pages/BASH-HISTORY.md)
 ### 7. [Комманда пуша в ветку релиз с тэгом](pages/GIT-PUSH-RELEASE.md)
 ### 8. [Установка npm, node.js](pages/INSTALL-NPM.md)
-### 9. Установка yarn
+### 9. [Установка yarn](pages/INSTALL-YARN.md)
 ### 10. Webpack, сборка, запуск dev ноды
 ### 11. RabbitMQ
 ### 12. Подключение расширения image_filter и интеграция его в nginx 

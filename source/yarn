@@ -1,0 +1,6 @@
+#!/bin/sh
+rootDir=~
+export PATH=$PATH:~/modules/yarn/bin
+export PATH=$PATH:~/modules/nodejs
+
+"$rootDir/modules/yarn/bin/yarn" "$@"
