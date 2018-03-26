@@ -38,7 +38,7 @@
         ```bash
         nginx -V
         ```
-    * Моя команда для конфигурирования. В нее необходимо внести коррективы в зависимости от вашего собранного уже OpenServer-e пакета, и изменить url к библиотекам (особое внимание уделите слешами в путях к библиотекам)): "--with-pcre=objs/lib/pcre-8.41", "--with-zlib=objs/lib/zlib-1.2.11", "--with-openssl=objs/lib/openssl-1.1.1-pre3", "--with-cc-opt="-DFD_SETSIZE=1024 -IC:/nginx/objs/lib/libgd-gd-2.2.5/src", "--with-ld-opt="C:/Program Files (x86)/GnuWin32/lib/libgd.lib"". 
+    * Моя команда для конфигурирования. В нее необходимо внести коррективы в зависимости от вашего собранного уже OpenServer-e пакета, и изменить url к библиотекам (особое внимание уделите слешами в путях к библиотекам)): "--with-pcre=objs/lib/pcre-8.41", "--with-zlib=objs/lib/zlib-1.2.11", "--with-openssl=objs/lib/openssl-1.1.1-pre3", "--with-cc-opt="-DFD_SETSIZE=1024 -IC:/nginx/objs/lib/libgd-gd-2.2.5/src", "--with-ld-opt="C:/Program\ Files\ \(x86\)/GnuWin32/lib/libgd.lib"". 
         ```bash
         auto/configure \
          --with-cc=cl \
@@ -81,5 +81,5 @@
          --with-stream_ssl_module \
          --with-http_image_filter_module \
          --with-cc-opt="-DFD_SETSIZE=1024 -IC:/nginx/objs/lib/libgd-gd-2.2.5/src" \
-         --with-ld-opt="C:/Program Files (x86)/GnuWin32/lib/libgd.lib"
+         --with-ld-opt="C:/Program\ Files\ \(x86\)/GnuWin32/lib/libgd.lib"
         ```
