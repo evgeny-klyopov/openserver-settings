@@ -15,5 +15,5 @@
 ### 9. [Установка yarn](pages/INSTALL-YARN.md)
 ### 10. [Webpack, сборка, запуск dev ноды](pages/WEBPACK.md)
 ### 11. RabbitMQ
-### 12. [Компиляция nginx c расширением image_filter для Openserver-a](pages/COMPILE-NIGINX-WITH-IMAGE-FILTER.md)
+### 12. Компиляция nginx c расширением image_filter для Openserver-a
 

@@ -2,7 +2,7 @@
 Небольшое отступление... Если у Вас возникла необходимость подключить расширение image_filter на windows, с вами определенно что-то не так...
 
 Руководство от создателя nginx - [https://nginx.ru/en/docs/howto_build_on_win32.html](https://nginx.ru/en/docs/howto_build_on_win32.html), стоит обратить внимание что win32 не случайно, потому как сбилдить x64 у Вас не выйдет, поэтому и инструменты для сборки должны быть x86.
-###Начнем:
+### Начнем:
 * Для начала необходимо [скачать](https://www.visualstudio.com/ru/thank-you-downloading-visual-studio/?sku=BuildTools&rel=15) и установить vs_buildtools, ссылка для скачивания - [https://www.visualstudio.com/ru/thank-you-downloading-visual-studio/?sku=BuildTools&rel=15](https://www.visualstudio.com/ru/thank-you-downloading-visual-studio/?sku=BuildTools&rel=15). После загрузки и запуска Вам будет предложены компоненты на выбор, нас интересует только Visual C++ Build Tools.
 ![Установка vs_buildtools](../img/vs_buildtools.png "Установка vs_buildtools")
 * Установка [MSYS](http://www.mingw.org/wiki/MSYS). 
@@ -38,7 +38,7 @@
         ```bash
         nginx -V
         ```
-    * Моя команда для конфигурирования. В нее необходимо внести коррективы в зависимости от вашего собранного уже OpenServer-e пакета, и изменить url к библиотекам (особое внимание уделите слешами в путях к библиотекам)): "--with-pcre=objs/lib/pcre-8.41", "--with-zlib=objs/lib/zlib-1.2.11", "--with-openssl=objs/lib/openssl-1.1.1-pre3", "--with-cc-opt="-DFD_SETSIZE=1024 -IC:/nginx/objs/lib/libgd-gd-2.2.5/src", "--with-ld-opt="C:/Program Files (x86)/GnuWin32/lib"". 
+    * Моя команда для конфигурирования. В нее необходимо внести коррективы в зависимости от вашего собранного уже OpenServer-e пакета, и изменить url к библиотекам (особое внимание уделите слешами в путях к библиотекам)): "--with-pcre=objs/lib/pcre-8.41", "--with-zlib=objs/lib/zlib-1.2.11", "--with-openssl=objs/lib/openssl-1.1.1-pre3", "--with-cc-opt="-DFD_SETSIZE=1024 -IC:/nginx/objs/lib/libgd-gd-2.2.5/src", "--with-ld-opt="C:/Program Files (x86)/GnuWin32/lib/libgd.lib"". 
         ```bash
         auto/configure \
          --with-cc=cl \
@@ -81,5 +81,5 @@
          --with-stream_ssl_module \
          --with-http_image_filter_module \
          --with-cc-opt="-DFD_SETSIZE=1024 -IC:/nginx/objs/lib/libgd-gd-2.2.5/src" \
-         --with-ld-opt="C:/Program Files (x86)/GnuWin32/lib"
+         --with-ld-opt="C:/Program Files (x86)/GnuWin32/lib/libgd.lib"
         ```
