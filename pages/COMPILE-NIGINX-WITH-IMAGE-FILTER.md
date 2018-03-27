@@ -9,6 +9,7 @@
     * Для этого необходимо установить MinGW, а уже потом из него поставить MSYS, ссылка для скачивания - [https://sourceforge.net/projects/mingw/files/](https://sourceforge.net/projects/mingw/files/).
     ![Установка MinGW](../img/install-mingw.png "Установка MinGW")
     * Далее сама установка MSYS. Выбираем вкладку All Packages (1), выбираем и помечаем на установку компонент mingw-developer-toolkit (2). После чего будет построено дерево зависимостей компонентов и необходимо будет произвести установку, для этого в меню выбираем Installation -> Apply Changes (3) -> Apply (4). После этого произодет скачивание и установка пакетов.
+    ![Выбор компонентов MSYS](../img/select-msys.png "Выбор компонентов MSYS")
     ![Запуск установки MSYS](../img/install-msys.png "Запуск установки MSYS")
     ![Установка MSYS](../img/install-apply-msys.png "Установка MSYS")
     * Так как в пакете MSYS присутствует не подходящий perl пакет - его следует переименовать. Для этого переходим в папку "C:\MinGW\msys\1.0\bin", ищем файл perl.exe и переименовываем его.
