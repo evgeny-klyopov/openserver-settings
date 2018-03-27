@@ -8,12 +8,18 @@
 * Установка [MSYS](http://www.mingw.org/wiki/MSYS). 
     * Для этого необходимо установить MinGW, а уже потом из него поставить MSYS, ссылка для скачивания - [https://sourceforge.net/projects/mingw/files/](https://sourceforge.net/projects/mingw/files/).
     ![Установка MinGW](../img/install-mingw.png "Установка MinGW")
-    * Далее сама установка MSYS. Выбираем вкладку All Packages (1), выбираем и помечаем на установку компонент mingw-developer-toolkit (2). После чего будет построенно дерево зависимостей компонентов и необходимо будет произвести установку, для этого в меню выбираем Installation -> Apply Changes (3) -> Apply (4). После этого произодет скачивание и установка пакетов.
+    * Далее сама установка MSYS. Выбираем вкладку All Packages (1), выбираем и помечаем на установку компонент mingw-developer-toolkit (2). После чего будет построено дерево зависимостей компонентов и необходимо будет произвести установку, для этого в меню выбираем Installation -> Apply Changes (3) -> Apply (4). После этого произодет скачивание и установка пакетов.
     ![Запуск установки MSYS](../img/install-msys.png "Запуск установки MSYS")
     ![Установка MSYS](../img/install-apply-msys.png "Установка MSYS")
+    * Так как в пакете MSYS присутствует не подходящий perl пакет - его следует переименовать. Для этого переходим в папку "C:\MinGW\msys\1.0\bin", ищем файл perl.exe и переименовываем его.
+    * Чтобы в процессе сборки link.exe однозначно ссылался на пакет vs_buildtools - необходимо переименовать link.exe MSYS. Для этого переходим в папку "C:\MinGW\msys\1.0\bin", ищем файл link.exe и переименовываем его. Если этого не сделать команда nmake не сможет собрать nginx. Проверить link можно командой (выполняется в консоли MSYS, ниже описано как запустить):
+        ```bash
+        where link
+        ```
+         ![Проверка link](../img/where-link.png "Проверка link")
 * Установка [ActivePerl](https://www.activestate.com/activeperl), ссылка для скачивания - [https://www.activestate.com/activeperl/downloads](https://www.activestate.com/activeperl/downloads).
 * Установка [Mercurial](https://www.mercurial-scm.org/), ссылка для скачивания - [https://www.mercurial-scm.org/downloads](https://www.mercurial-scm.org/downloads).
-* Установка [GnuWin32](http://getgnuwin32.sourceforge.net/), ссылка для скачивания [https://sourceforge.net/projects/gnuwin32/files/gd/2.0.33-1/gd-2.0.33-1.exe/download?use_mirror=netix&download=](https://sourceforge.net/projects/gnuwin32/files/gd/2.0.33-1/gd-2.0.33-1.exe/download?use_mirror=netix&download=). (Установка производится по умолчанию в - C:\Program Files (x86)\GnuWin32)
+* Установка [GnuWin32](http://getgnuwin32.sourceforge.net/), ссылка для скачивания [https://sourceforge.net/projects/gnuwin32/files/gd/2.0.33-1/gd-2.0.33-1.exe/download?use_mirror=netix&download=](https://sourceforge.net/projects/gnuwin32/files/gd/2.0.33-1/gd-2.0.33-1.exe/download?use_mirror=netix&download=). Установка производится в - C:\GnuWin32, при установке по умолчанию возникнут проблемы с экранированием пробелом и скобок, и если на этапе конфигурации это решит проблему, то на этапе сборке ничего кроме фаталов собрать не получиться.
 * Перезагрузка
 * Открываем консоль, переходим на диск С и скачиваем исходники nginx (команда - hg clone http://hg.nginx.org/nginx)
     ![Скачивание исходников nginx](../img/download-source-nginx.png "Скачивание исходников nginx")
@@ -29,16 +35,16 @@
 * Запуск MSYS. Переходим в директорию куда производилась установка MinGW, в моем случае C:\MinGW, а затем в директорию MSYS (cd msys\1.0), и запускаем msys.bat.
     ![Запускаем MSYS](../img/run-msys.png "Запускаем MSYS")
     ![Консоль MSYS](../img/console-msys.png "Консоль MSYS")
-* В консоле MSYS переходим в папку с исходниками nginx
+* В консоли MSYS переходим в папку с исходниками nginx
     ```bash
     cd /c/nginx/
     ```
-* Конфигурирование
+* Конфигурирование и непосредственно сама сборка (все происходит в консоли MSYS)
     * По идеи перед запуском необходимо посмотреть с какими библиотеками собран nginx в OpenServer-e, для этого в консоли OpenServer-а надо запустить:
         ```bash
         nginx -V
         ```
-    * Моя команда для конфигурирования. В нее необходимо внести коррективы в зависимости от вашего собранного уже OpenServer-e пакета, и изменить url к библиотекам (особое внимание уделите слешами в путях к библиотекам)): "--with-pcre=objs/lib/pcre-8.41", "--with-zlib=objs/lib/zlib-1.2.11", "--with-openssl=objs/lib/openssl-1.1.1-pre3", "--with-cc-opt="-DFD_SETSIZE=1024 -IC:/nginx/objs/lib/libgd-gd-2.2.5/src", "--with-ld-opt="C:/Program\ Files\ \(x86\)/GnuWin32/lib/libgd.lib"". 
+    * Моя команда для конфигурирования. В нее необходимо внести коррективы в зависимости от вашего собранного уже OpenServer-e пакета, и изменить url к библиотекам (особое внимание уделите слешами в путях к библиотекам)): "--with-pcre=objs/lib/pcre-8.41", "--with-zlib=objs/lib/zlib-1.2.11", "--with-openssl=objs/lib/openssl-1.1.1-pre3", "--with-cc-opt="-DFD_SETSIZE=1024 -IC:/nginx/objs/lib/libgd-gd-2.2.5/src", "--with-ld-opt="C:/GnuWin32/lib/libgd.lib"".
         ```bash
         auto/configure \
          --with-cc=cl \
@@ -81,5 +87,16 @@
          --with-stream_ssl_module \
          --with-http_image_filter_module \
          --with-cc-opt="-DFD_SETSIZE=1024 -IC:/nginx/objs/lib/libgd-gd-2.2.5/src" \
-         --with-ld-opt="C:/Program\ Files\ \(x86\)/GnuWin32/lib/libgd.lib"
+         --with-ld-opt="C:/GnuWin32/lib/libgd.lib"
         ```
+    * Сборка происходит в директории /c/nginx/ путем выполнения команды nmake. Процесс не быстрый..., успеете еще не раз задать себе вопрос - зачем?)
+        ```bash
+            nmake
+        ```
+* Добавление скомпилированного nginx файла в Openserver
+    * Переходим в папку C:\OSPanel\modules\http, выбираем наиболее подходящую папку с конфигом nginx, копируем ее и выставляем версия. Так как в данном примере собирался Nginx-1.13, копируем папку Nginx-1.12 и переименовываем ее в Nginx-1.13.
+    * Переносим скомпилированный файл nginx из директории C:\nginx\objs в нашу папку (C:\OSPanel\modules\http\Nginx-1.13).
+    * Так как для работы image_filter нужны dll библиотеки libgd, переносим их тоже. Для этого все dll файлы из директории "C:\GnuWin32\bin" копируем в папку "C:\OSPanel\modules\http\Nginx-1.13".
+    * Меняем конфиг файла nginx "C:\OSPanel\modules\http\Nginx-1.13\conf\nginx.conf". В нем меняем название директории, которая являлась для нас шаблонов, в данном случае Nginx-1.12 меняем на Nginx-1.13.
+    * Создаем шаблоны конфигураций, для этого переходим в директорию "C:\OSPanel\userdata\config" и копируем конфигурационные файлы директории, которая являлась для нас шаблоном. В данном примере Nginx-1.12_server.conf и Nginx-1.12_vhost.conf, копируем и переименовываем в Nginx-1.13_server.conf и Nginx-1.13_vhost.conf соответственно.
+    * После этого можно в настройках Openserver-a можно выбрать наш скомпилированный nginx.
