@@ -17,4 +17,4 @@
 ### 11. RabbitMQ
 ### 12. [Компиляция nginx c расширением image_filter для Openserver-a](pages/COMPILE-NIGINX-WITH-IMAGE-FILTER.md)
 ### 13. [Дружим phpStorm и Git Bash](pages/PHPSTORM_GIT_BASH.md)
-
+### 14. [Deployer client](pages/DEPLOYER_CLIENT.md)
